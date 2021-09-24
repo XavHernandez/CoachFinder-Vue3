@@ -2,10 +2,10 @@
 
 ## Project description
 
-Personal practice project build upon Vue3, Vue-Router, VueX and Firebase.
-A User can access a list of coaches and their detailled infos (Expertise, Rate).
-A User can register as a coach.
-A User can make a request for mentoring to a coach.
+Personal practice project build upon Vue3, Vue-Router, VueX and Firebase. </br>
+A User can access a list of coaches and their detailled infos (Expertise, Rate). </br>
+A User can register as a coach. </br>
+A User can make a request for mentoring to a coach. </br>
 
 ## Project setup
 
