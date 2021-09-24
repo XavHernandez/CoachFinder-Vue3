@@ -7,6 +7,8 @@ A User can access a list of coaches and their detailled infos (Expertise, Rate).
 A User can register as a coach. </br>
 A User can make a request for mentoring to a coach. </br>
 
+Practice of VueX namespaced modules.
+
 ## Project setup
 
 ```
