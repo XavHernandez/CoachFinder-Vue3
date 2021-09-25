@@ -2,7 +2,7 @@
   <form @submit.prevent="submitForm">
     <div class="form-control">
       <label for="firstname">Firstname</label>
-      <input type="text" id="firstname" v-model.trim="fistName">
+      <input type="text" id="firstname" v-model.trim="firstName">
     </div>
     <div class="form-control">
       <label for="lastname">Firstname</label>
@@ -37,28 +37,29 @@
 
 <script>
 export default {
-data() {
-  return {
-    firstName: '',
-    lastName: '',
-    description: '',
-    rate: null,
-    areas: []
-  }
-},
-methods: {
-  submitForm() {
-    const formData = {
-      first: this.firstName,
-      last: this.lastName,
-      desc: this.description,
-      rate: this.rate,
-      areas: this.areas
+  emits: ['save-data'],
+  data() {
+    return {
+      firstName: '',
+      lastName: '',
+      description: '',
+      rate: null,
+      areas: []
     }
-    console.log(formData);
   },
-},
-}
+  methods: {
+    submitForm() {
+      const formData = {
+        first: this.firstName,
+        last: this.lastName,
+        desc: this.description,
+        rate: this.rate,
+        areas: this.areas
+      }
+      this.$emit('save-data', formData)
+    },
+  },
+  }
 </script>
 
 <style scoped>
