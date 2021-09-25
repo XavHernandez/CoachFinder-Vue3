@@ -4,6 +4,7 @@
 
 Personal practice project build upon Vue3 (OptionsAPI), Vue-Router, VueX. </br>
 A User can access a list of coaches and their detailled infos (Expertise, Rate). </br>
+A User can filter coaches by area of expertise. </br>
 A User can register as a coach. </br>
 A User can make a request for mentoring to a coach. </br>
 
