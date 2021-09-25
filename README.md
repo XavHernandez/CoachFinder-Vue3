@@ -8,7 +8,8 @@ A User can filter coaches by area of expertise. </br>
 A User can register as a coach. </br>
 A User can make a request for mentoring to a coach. </br>
 
-Practice of VueX namespaced modules.
+Practice of VueX namespaced modules. </br>
+Coach Registration form validations.
 
 ## Project setup
 

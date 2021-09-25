@@ -41,6 +41,7 @@ a {
   cursor: pointer;
   border-radius: 30px;
   margin-right: 0.5rem;
+  margin-top: 0.5rem;
   display: inline-block;
 }
 
