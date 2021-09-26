@@ -12,7 +12,7 @@
           :message="request.message"
         ></request-item>
       </ul>
-      <h3>You haven't received any requests yet!</h3>
+      <h3 v-else>You haven't received any requests yet!</h3>
     </base-card>
   </section>
 </template>
