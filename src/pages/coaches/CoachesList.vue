@@ -4,25 +4,31 @@
   </section>
   <section>
     <base-card>
-    <div class="controls">
-      <base-button mode="outline" @click="loadCoaches">Refresh</base-button>
-      <base-button v-if="!isCoach && !isLoading" link to="/register">Register as Coach</base-button>
-    </div>
-    <div v-if="isLoading">
-      <base-spinner></base-spinner>
-    </div>
-    <ul v-else-if="hasCoaches">
-      <coach-item
-        v-for="coach in filteredCoaches"
-        :key="coach.id"
-        :id="coach.id"
-        :first-name="coach.firstName"
-        :last-name="coach.lastName"
-        :rate="coach.hourlyRate"
-        :areas="coach.areas"
-      ></coach-item>
-    </ul>
-    <h3 v-else>No coaches found.</h3>
+      <div class="controls">
+        <base-button mode="outline" @click="loadCoaches">Refresh</base-button>
+        <base-button v-if="!isCoach && !isLoading" link to="/register"
+          >Register as Coach</base-button
+        >
+      </div>
+      <div v-if="isLoading" class="spinner-position">
+        <base-spinner
+          :animation-duration="2000"
+          :size="60"
+          color="#3d008d"
+        ></base-spinner>
+      </div>
+      <ul v-else-if="hasCoaches">
+        <coach-item
+          v-for="coach in filteredCoaches"
+          :key="coach.id"
+          :id="coach.id"
+          :first-name="coach.firstName"
+          :last-name="coach.lastName"
+          :rate="coach.hourlyRate"
+          :areas="coach.areas"
+        ></coach-item>
+      </ul>
+      <h3 v-else>No coaches found.</h3>
     </base-card>
   </section>
 </template>
@@ -33,30 +39,30 @@ import CoachFilter from "../../components/coaches/CoachFilter.vue";
 
 export default {
   components: { CoachItem, CoachFilter },
-  data() { 
+  data() {
     return {
       isLoading: false,
       activeFilters: {
         frontend: true,
         backend: true,
-        career: true
-      }
-    }
+        career: true,
+      },
+    };
   },
   computed: {
     isCoach() {
-      return this.$store.getters['coaches/isCoach'];
+      return this.$store.getters["coaches/isCoach"];
     },
     filteredCoaches() {
       const coaches = this.$store.getters["coaches/coaches"];
-      return coaches.filter(coach => {
-        if (this.activeFilters.frontend && coach.areas.includes('frontend')) {
+      return coaches.filter((coach) => {
+        if (this.activeFilters.frontend && coach.areas.includes("frontend")) {
           return true;
         }
-        if (this.activeFilters.backend && coach.areas.includes('backend')) {
+        if (this.activeFilters.backend && coach.areas.includes("backend")) {
           return true;
         }
-        if (this.activeFilters.career && coach.areas.includes('career')) {
+        if (this.activeFilters.career && coach.areas.includes("career")) {
           return true;
         }
         return false;
@@ -66,19 +72,19 @@ export default {
       return !this.isLoading && this.$store.getters["coaches/hasCoaches"];
     },
   },
-  methods: { 
+  methods: {
     setFilters(updatedFilters) {
       this.activeFilters = updatedFilters;
     },
     async loadCoaches() {
       this.isLoading = true;
-      await this.$store.dispatch('coaches/loadCoaches');
+      await this.$store.dispatch("coaches/loadCoaches");
       this.isLoading = false;
-    }
+    },
   },
   created() {
     this.loadCoaches();
-  }
+  },
 };
 </script>
 
@@ -92,5 +98,9 @@ ul {
 .controls {
   display: flex;
   justify-content: space-between;
+}
+.spinner-position {
+  display: flex;
+  justify-content: center;
 }
 </style>
