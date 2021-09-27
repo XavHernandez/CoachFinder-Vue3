@@ -14,6 +14,7 @@ Coaches Data stored/fetched with Firebase. </br>
 Loading Spinner component. </br>
 Errors handling modal. </br>
 Data caching based on Timestamps. </br>
+Routes transitions and modal animation. </br>
 
 ## Project setup
 
