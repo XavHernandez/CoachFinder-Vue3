@@ -26,7 +26,7 @@ export default {
     context.commit("registerCoach", { ...coachData, id: userId });
   },
   async loadCoaches(context) {
-    const response = await fetch(`https://coachfinder-vue3-default-rtdb.europe-west1.firebasedatabase.app/coaches.jso`);
+    const response = await fetch(`https://coachfinder-vue3-default-rtdb.europe-west1.firebasedatabase.app/coaches.json`);
     const responseData = await response.json();
 
     if (!response.ok) {
