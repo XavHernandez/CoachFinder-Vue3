@@ -10,7 +10,9 @@ A User can make a request for mentoring to a coach. </br>
 
 Practice of VueX namespaced modules. </br>
 Coach Registration form validations. </br>
-Coaches data stored/fetched with Firebase.
+Coaches data stored/fetched with Firebase. </br>
+Loading Spinner component. </br>
+Error handling modal. </br>
 
 ## Project setup
 
