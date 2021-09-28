@@ -52,13 +52,22 @@ export default {
     submitForm() {
       if (
         this.email === "" ||
-        this.email.includes("@") ||
+        !this.email.includes("@") ||
         this.password.length < 6
       ) {
         this.formIsValid = false;
         return;
       }
-      // send request
+      
+      if (this.mode === 'login') {
+        //...
+      } else { 
+        this.$store.dispatch('signup', {
+          email: this.email,
+          password: this.password,
+        });
+      }
+
     },
     switchAuthMode() {
       if (this.mode === 'login') {
