@@ -2,18 +2,24 @@
 
 ## Project description
 
+### User stories
+
 Personal practice project build upon Vue3 (OptionsAPI), Vue-Router, VueX and Firebase. </br>
 A User can access a list of coaches and their detailled infos (Expertise, Rate). </br>
 A User can filter coaches by area of expertise. </br>
-A User can register as a coach. </br>
+An identifed user can register as a coach. </br>
 A User can make a request for mentoring to a coach. </br>
+A registered coach can access the list of its requests. </br>
+
+### Practiced concepts
 
 Practice of VueX namespaced modules. </br>
+Firebase authentification & authorization. </br>
 Coach Registration form validations. </br>
 Coaches Data stored/fetched with Firebase. </br>
+Data caching based on Timestamps. </br>
 Loading Spinner component. </br>
 Errors handling modal. </br>
-Data caching based on Timestamps. </br>
 Routes transitions and modal animation. </br>
 
 ## Project setup
