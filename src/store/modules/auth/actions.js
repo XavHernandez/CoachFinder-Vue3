@@ -1,7 +1,7 @@
 export default {
   login() {},
   async signup(context, payload) {
-    const response = await fetch ('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCfl-VX14wNZywVC9y02SBkBaTJa0iJwDw', {
+    const response = await fetch (`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${process.env.VUE_APP_FIREBASE}`, {
       method: 'POST',
       body: JSON.stringify({
         email: payload.email,
