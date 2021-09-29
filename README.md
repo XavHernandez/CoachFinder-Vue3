@@ -21,6 +21,7 @@ Data caching based on Timestamps. </br>
 Loading Spinner component. </br>
 Errors handling modal. </br>
 Routes transitions and modal animation. </br>
+Auto-login and auto-logout based on token expiration. </br>
 
 ## Project setup
 
