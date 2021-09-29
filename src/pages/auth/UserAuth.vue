@@ -4,7 +4,11 @@
       <p>{{ error }}</p>
     </base-dialog>
     <base-dialog :show="isLoading" title="Authenticating..." fixed>
-      <base-spinner></base-spinner>
+      <base-spinner
+        :animation-duration="1500"
+        :size="60"
+        color="#3d008d"
+      ></base-spinner>
     </base-dialog>
     <base-card>
       <form @submit.prevent="submitForm">
