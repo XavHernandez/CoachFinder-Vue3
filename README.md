@@ -1,6 +1,6 @@
 # CoachFinder
 
-Live Demo @ [https://coachfinder-vue3.web.app/coaches](https://coachfinder-vue3.web.app/coaches)
+Live Demo @ [https://coachfinder-vue3.web.app](https://coachfinder-vue3.web.app)
 
 ## Project description
 
