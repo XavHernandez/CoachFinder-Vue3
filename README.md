@@ -22,6 +22,7 @@ Loading Spinner component. </br>
 Errors handling modal. </br>
 Routes transitions and modal animation. </br>
 Auto-login and auto-logout based on token expiration. </br>
+Asynchronous components & routes. </br>
 
 ## Project setup
 
