@@ -1,37 +1,42 @@
 <template>
-<div>
-  <base-dialog :show="!!error" title="An error occured." @close="handleError">
-    <p>{{ error }}</p>
-  </base-dialog>
-  <base-dialog :show="isLoading" title="Authenticating..." fixed>
-    <base-spinner></base-spinner>
-  </base-dialog>
-  <base-card>
-    <form @submit.prevent="submitForm">
-      <div class="form-control">
-        <label for="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          placeholder="Your email here"
-          v-model.trim="email"
-        />
-      </div>
-      <div class="form-control">
-        <label for="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          placeholder="Your password here"
-          v-model.trim="password"
-        />
-      </div>
-      <p v-if="!formIsValid">Username or password invalid! Password must contain at least 6 characters.</p>
-      <base-button>{{ submitButtonCaption }}</base-button>
-      <base-button type="button" mode="flat" @click="switchAuthMode">{{ switchModeButtonCaption }}</base-button>
-    </form>
-  </base-card>
-</div>
+  <div>
+    <base-dialog :show="!!error" title="An error occured." @close="handleError">
+      <p>{{ error }}</p>
+    </base-dialog>
+    <base-dialog :show="isLoading" title="Authenticating..." fixed>
+      <base-spinner></base-spinner>
+    </base-dialog>
+    <base-card>
+      <form @submit.prevent="submitForm">
+        <div class="form-control">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Your email here"
+            v-model.trim="email"
+          />
+        </div>
+        <div class="form-control">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Your password here"
+            v-model.trim="password"
+          />
+        </div>
+        <p v-if="!formIsValid">
+          Username or password invalid! Password must contain at least 6
+          characters.
+        </p>
+        <base-button>{{ submitButtonCaption }}</base-button>
+        <base-button type="button" mode="flat" @click="switchAuthMode">{{
+          switchModeButtonCaption
+        }}</base-button>
+      </form>
+    </base-card>
+  </div>
 </template>
 
 <script>
@@ -43,20 +48,24 @@ export default {
       formIsValid: true,
       mode: "login",
       isLoading: false,
-      error: null
+      error: null,
     };
   },
   computed: {
     submitButtonCaption() {
-      if (this.mode === 'login') {
-        return 'Login';
-      } else { return 'Signup'}
+      if (this.mode === "login") {
+        return "Login";
+      } else {
+        return "Signup";
+      }
     },
     switchModeButtonCaption() {
-      if (this.mode === 'login') {
+      if (this.mode === "login") {
         return "Signup";
-      } else { return 'Login'}
-    }
+      } else {
+        return "Login";
+      }
+    },
   },
   methods: {
     async submitForm() {
@@ -68,30 +77,35 @@ export default {
         this.formIsValid = false;
         return;
       }
-      
+
       this.isLoading = true;
+
+      const actionPayload = {
+        email: this.email,
+        password: this.password,
+      };
+
       try {
-         if (this.mode === 'login') {
-        //...
-        } else { 
-        await this.$store.dispatch('signup', {
-          email: this.email,
-          password: this.password,
-        });
-      }
+        if (this.mode === "login") {
+          await this.$store.dispatch("login", actionPayload);
+        } else {
+          await this.$store.dispatch("signup", actionPayload);
+        }
       } catch (err) {
-        this.error = err.message || 'Failed to authenticate!'
+        this.error = err.message || "Failed to authenticate!";
       }
       this.isLoading = false;
     },
     switchAuthMode() {
-      if (this.mode === 'login') {
-        this.mode = 'signup';
-      } else { this.mode = "login"}
+      if (this.mode === "login") {
+        this.mode = "signup";
+      } else {
+        this.mode = "login";
+      }
     },
     handleError() {
       this.error = null;
-    }
+    },
   },
 };
 </script>
