@@ -1,5 +1,7 @@
 # CoachFinder
 
+Live Demo @ [https://coachfinder-vue3.web.app/coaches](https://coachfinder-vue3.web.app/coaches)
+
 ## Project description
 
 ### User stories
