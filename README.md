@@ -4,9 +4,10 @@ Live Demo @ [https://coachfinder-vue3.web.app](https://coachfinder-vue3.web.app)
 
 ## Project description
 
+Personal practice project build upon Vue3 (OptionsAPI), Vue-Router, VueX and Firebase. </br>
+
 ### User stories
 
-Personal practice project build upon Vue3 (OptionsAPI), Vue-Router, VueX and Firebase. </br>
 A User can access a list of coaches and their detailled infos (Expertise, Rate). </br>
 A User can filter coaches by area of expertise. </br>
 An identifed user can register as a coach. </br>
